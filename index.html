@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>RL Physics Models</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        video {
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Reinforcement Learning for Physics Models</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Physics Model Name</th>
+            <th>RL Algorithm</th>
+            <th>Action Space</th>
+            <th>Observation Space</th>
+            <th>Task</th>
+            <th>Reward</th>
+            <th>Duration</th>
+            <th>Number of Episodes</th>
+            <th>Reward Plot</th>
+            <th>Task Plot</th>
+            <th>Rendered Video (Mujoco)</th>
+            <th>Link to Code</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Example row -->
+        <tr>
+            <td>CartPole</td>
+            <td>DQN</td>
+            <td>Discrete</td>
+            <td>4D vector</td>
+            <td>Balance a pole on a cart</td>
+            <td>1 if balanced, 0 if failed</td>
+            <td>500 steps</td>
+            <td>1000</td>
+            <td><img src="reward_plot.png" alt="Reward plot" width="150"></td>
+            <td><img src="task_plot.png" alt="Task plot" width="150"></td>
+            <td><video controls>
+                <source src="cartpole_render.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video></td>
+            <td><a href="https://github.com/username/cartpole-dqn">Code</a></td>
+        </tr>
+        <!-- Add more rows as needed -->
+    </tbody>
+</table>
+
+</body>
+</html>
