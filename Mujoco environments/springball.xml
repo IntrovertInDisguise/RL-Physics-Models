@@ -1,0 +1,53 @@
+<mujoco model="horizontal_spring_ball">
+    <compiler angle="degree" coordinate="local" />
+    <option gravity="0 0 -9.81" /> <!-- Gravity in the negative z-direction -->
+
+    <!-- Default settings for bodies, joints, and geom properties -->
+    <default>
+        <joint damping="0.5" limited="true"/>
+        <geom density="1000" friction="0.5 0.1 0.1"/>
+    </default>
+
+    <!-- World body -->
+    <worldbody>
+        <light directional="true" cutoff="4" exponent="20" diffuse="1 1 1" specular="0 0 0" pos=".9 .3 2.5" dir="-.9 -.3 -2.5 "/>
+	
+        <!-- Ground plane -->
+        <geom name="ground" type="plane" size="0 0 0.1" rgba="0.8 0.8 0.8 1"/>
+
+        <!-- A fixed wall-->
+        <body name="wall" pos="2 0 0">
+            <!-- Geom representing the wall -->
+            <geom name="wall_geom" type="box" size="0.05 0.2 0.2" rgba="0.8 0.2 0.2 1"/>
+        </body>
+
+        <!-- A fixed body to attach the spring to -->
+        <body name="base" pos="0 0 0">
+            <!-- Geom representing the base -->
+            <geom name="base_geom" type="box" size="0.02 0.1 0.1" rgba="0.8 0.2 0.2 1"/>
+        </body>
+
+        <!-- Placeholder cuboidal mass body, representing the spring anchor -->
+        <body name="small_mass" pos="0.2 0 0.01"> <!-- Adjusted position -->
+            <!-- Cuboidal mass geometry (slender shape) -->
+            <geom name="mass_geom" type="box" size="0.02 0.1 0.1" mass="0.1" rgba="0.5 0.5 0.5 1"/>
+
+            <!-- Joint for the mass to allow movement along the x-axis -->
+            <joint name="mass_joint" type="slide" axis="1 0 0" range="-1 1" stiffness="50" />
+        </body>
+
+        <!-- Free-moving ball body -->
+        <body name="ball" pos="0.4 0 0.05"> <!-- Positioned above the ground -->
+            <!-- Ball geometry -->
+            <geom name="ball_geom" type="sphere" size="0.05" mass="0.2" rgba="0.2 0.2 0.8 1"/>
+
+            <!-- Ball joint allowing movement along the x-axis -->
+            <joint name="ball_slide" type="slide" axis="1 0 0" range="-10 10"/>
+        </body>
+    </worldbody>
+
+    <!-- Actuator applying force at the center of mass of the ball along the x-axis -->
+    <actuator>
+        <motor joint="ball_slide" ctrllimited="true" ctrlrange="-20 20" gear="1" />
+    </actuator>
+</mujoco>

@@ -1,0 +1,50 @@
+<mujoco model="acrobot"> 
+	<compiler angle="radian"/>
+
+	<option timestep="0.001" gravity="0 0 -9.81" integrator="RK4"/>
+	
+	<default>
+		<geom rgba="0.45 0.6 0.6 1"/>
+		<site type="sphere" size="0.02"/>
+	</default>
+	<worldbody>
+	
+		<light directional="true" cutoff="4" exponent="20" diffuse="1 1 1" specular="0 0 0" pos=".9 .3 2.5" dir="-.9 -.3 -2.5"/>
+	
+		<!-- ======= Ground ======= -->
+		<geom name="ground" type="plane" pos="0 0 0" size="0.5 1 2" rgba=" .25 .26 .25 1" contype="0" conaffinity="0"/>
+		<site name="rFix" pos="0 -.2 .005"/>
+		<site name="lFix" pos="0 .2 .005"/>
+			
+		<!-- ======= Beam ======= -->
+		<body name="rod1body" pos="0 0 2.0"> <!-- Changed height to 1.0 (half of 2m rod) -->
+			<geom name="rod1geom" type="cylinder" pos="0.25 0 0" size=".01 0.25" mass="2" euler="0 1.57 0"/> <!-- Adjusted rod height to 2m -->
+			<geom pos="0 0 0" type="capsule" size=".01 0.25" euler="1.57 0 0"/> <!-- pivot of first link -->
+			<joint name="passive" pos="0 0 0.0" axis="0 -1 0" limited="false"/>
+			<site name="rBeam" pos="0 -.2 0"/>
+			<site name="lBeam" pos="0 .2 0"/>
+			<body name="rod2body">
+				<geom name="rod2geom" type="cylinder" pos="0.25 0 0" size=".01 0.25" mass="1" euler="0 1.57 0" rgba=" .75 .76 .75 1"/> <!-- Adjusted pendulum link length to 0.5m -->
+				<joint name="active" pos="0.5 0 0" axis="0 -1 0" limited="false"/>
+			</body>
+		</body>
+	</worldbody>
+	
+	<tendon>
+		<spatial name="lThread" width="0.01">
+			<site site="lBeam"/>
+			<site site="lFix"/>
+		</spatial>
+		
+		<spatial name="rThread" width="0.01">
+			<site site="rBeam"/>
+			<site site="rFix"/>
+		</spatial>
+
+	</tendon>
+	
+	<actuator>
+		<motor joint='active' name='motor' forcelimited="false"/>
+	</actuator>
+
+</mujoco>
