@@ -1,0 +1,36 @@
+{
+  "build": "py311haa95532_0",
+  "build_number": 0,
+  "channel": "https://repo.anaconda.com/pkgs/main/win-64",
+  "constrains": [],
+  "depends": [
+    "matplotlib-base >=3.9.2,<3.9.3.0a0",
+    "pyqt >=5",
+    "python >=3.11,<3.12.0a0",
+    "tornado >=5"
+  ],
+  "extracted_package_dir": "C:\\Users\\rvign\\miniconda3\\pkgs\\matplotlib-3.9.2-py311haa95532_0",
+  "files": [
+    ".nonadmin"
+  ],
+  "fn": "matplotlib-3.9.2-py311haa95532_0.conda",
+  "license": "LicenseRef-PSF-based",
+  "link": {
+    "source": "C:\\Users\\rvign\\miniconda3\\pkgs\\matplotlib-3.9.2-py311haa95532_0",
+    "type": 1
+  },
+  "md5": "3cdcc7df0dc463e9d26e9cc709c90d20",
+  "name": "matplotlib",
+  "package_tarball_full_path": "C:\\Users\\rvign\\miniconda3\\pkgs\\matplotlib-3.9.2-py311haa95532_0.conda",
+  "paths_data": {
+    "paths": [],
+    "paths_version": 1
+  },
+  "requested_spec": "matplotlib",
+  "sha256": "899a8078870a4dd3be4455d99adfbe4a4611529ccd1da7694745cc00dfcdd628",
+  "size": 7772,
+  "subdir": "win-64",
+  "timestamp": 1725264804000,
+  "url": "https://repo.anaconda.com/pkgs/main/win-64/matplotlib-3.9.2-py311haa95532_0.conda",
+  "version": "3.9.2"
+}
