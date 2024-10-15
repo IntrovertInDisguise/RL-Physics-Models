@@ -64,8 +64,8 @@ $$ Q(s, a) \leftarrow Q(s, a) + \alpha \left[ r + \gamma \max_{a'} Q(s', a') - Q
             <th>Reward</th>
             <th>Duration</th>
             <th>Number of Episodes</th>
-            <th>Reward Plot</th>
-            <th>Task Plot</th>
+            <th>Time Evolution plots</th>
+            <th>Epoch Plot</th>
             <th>Rendered Video (Mujoco)</th>
             <th>Link to Code</th>
         </tr>
@@ -78,17 +78,17 @@ $$ Q(s, a) \leftarrow Q(s, a) + \alpha \left[ r + \gamma \max_{a'} Q(s', a') - Q
             <td>Discrete (+10, 0, -10)</td>
             <td>Position, Velocity (2D)</td>
             <td>Maximize spring compression</td>
-            <td>+1 for max compression, -1 otherwise</td>
+            <td>-abs(data.qpos[0])</td>
             <td>10s</td>
             <td>10000</td>
-            <td><img src="reward_plot_springmass.png" alt="Reward plot" width="150"></td>
-            <td><img src="task_plot_springmass.png" alt="Task plot" width="150"></td>
+            <td><img src="" alt="Time evolution plot" width="150"></td>
+            <td><img src="" alt="Epoch plot" width="150"></td>
             <td><video controls>
-                <source src="springmass_render.mp4" type="video/mp4">
-                Your browser does not support the video tag.
+                <source src="springmass.mp4" type="video/mp4">
             </video></td>
-            <td><a href="https://github.com/introvertindisguise/RL-Physics-Models">Code/QLearning</a></td>
+            <td><a href="https://github.com/introvertindisguise/RL-Physics-Models">Code/QLearning/Outputs/Springmass/</a></td>
         </tr>
+        
         <!-- More rows as needed -->
     </tbody>
 </table>
