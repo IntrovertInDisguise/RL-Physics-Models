@@ -82,7 +82,7 @@ $$ Q(s, a) \leftarrow Q(s, a) + \alpha \left[ r + \gamma \max_{a'} Q(s', a') - Q
             <td>Discrete Force (+10, 0, -10)</td>
             <td>Position, Velocity (2D)</td>
             <td>Maximize spring compression</td>
-            <td>-abs(data.qpos[0]) </td>
+            <td> -|x|</td>
             <td>10s</td>
             <td>10000</td>
             <td><img src="https://github.com/IntrovertInDisguise/RL-Physics-Models/blob/46e7d48903436abbdc04f920c7992fd077fe669b/Code/QLearning/Outputs/Springmass/EvolutionOverTime.png" alt="Time evolution plot" width="150"></td>
