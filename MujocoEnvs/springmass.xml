@@ -11,7 +11,8 @@
     <!-- World body -->
     <worldbody>
         <light directional="true" cutoff="4" exponent="20" diffuse="1 1 1" specular="0 0 0" pos=".9 .3 2.5" dir="-.9 -.3 -2.5 "/>
-	
+        <camera name="cam1" pos="0.000 -1.414 1.414" xyaxes="1.000 -0.000 0.000 0.000 0.707 0.707"/>
+
         <!-- Ground plane -->
         <geom name="ground" type="plane" size="0 0 0.1" rgba="0.8 0.8 0.8 1"/>
 
@@ -32,6 +33,6 @@
     </worldbody>
 
     <actuator>
-        <motor joint="mass_joint" ctrllimited="true" ctrlrange="-10 10" gear="1" />
+        <motor joint="mass_joint" gear="1" forcerange="-10 10" />
     </actuator>
 </mujoco>
