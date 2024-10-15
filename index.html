@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>RL Physics Models</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -32,6 +35,24 @@
 
 <h1>Reinforcement Learning for Physics Models</h1>
 
+<h2>Q-learning Algorithm</h2>
+<p>The Q-learning algorithm is based on the following update rule:</p>
+
+<!-- LaTeX Q-learning Formula -->
+<p>
+$$ Q(s, a) \leftarrow Q(s, a) + \alpha \left[ r + \gamma \max_{a'} Q(s', a') - Q(s, a) \right] $$
+</p>
+<p>Where:</p>
+<ul>
+    <li>\( Q(s, a) \): Q-value for state \( s \) and action \( a \)</li>
+    <li>\( \alpha \): Learning rate</li>
+    <li>\( \gamma \): Discount factor</li>
+    <li>\( r \): Reward</li>
+    <li>\( s', a' \): Next state and action</li>
+</ul>
+
+<h2>Physics Model Implementations</h2>
+
 <table>
     <thead>
         <tr>
@@ -50,25 +71,25 @@
         </tr>
     </thead>
     <tbody>
-        <!-- Example row -->
+        <!-- Example row: Spring-Mass system from your repository -->
         <tr>
-            <td>CartPole</td>
-            <td>DQN</td>
-            <td>Discrete</td>
-            <td>4D vector</td>
-            <td>Balance a pole on a cart</td>
-            <td>1 if balanced, 0 if failed</td>
-            <td>500 steps</td>
-            <td>1000</td>
-            <td><img src="reward_plot.png" alt="Reward plot" width="150"></td>
-            <td><img src="task_plot.png" alt="Task plot" width="150"></td>
+            <td>Spring-Mass</td>
+            <td>Q-learning</td>
+            <td>Discrete (+10, 0, -10)</td>
+            <td>Position, Velocity (2D)</td>
+            <td>Maximize spring compression</td>
+            <td>+1 for max compression, -1 otherwise</td>
+            <td>10s</td>
+            <td>10000</td>
+            <td><img src="reward_plot_springmass.png" alt="Reward plot" width="150"></td>
+            <td><img src="task_plot_springmass.png" alt="Task plot" width="150"></td>
             <td><video controls>
-                <source src="cartpole_render.mp4" type="video/mp4">
+                <source src="springmass_render.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video></td>
-            <td><a href="https://github.com/username/cartpole-dqn">Code</a></td>
+            <td><a href="https://github.com/introvertindisguise/RL-Physics-Models">Code</a></td>
         </tr>
-        <!-- Add more rows as needed -->
+        <!-- More rows as needed -->
     </tbody>
 </table>
 
