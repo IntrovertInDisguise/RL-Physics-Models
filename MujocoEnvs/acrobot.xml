@@ -2,7 +2,8 @@
 	<compiler angle="radian"/>
 
 	<option timestep="0.001" gravity="0 0 -9.81" integrator="RK4"/>
-	
+
+
 	<default>
 		<geom rgba="0.45 0.6 0.6 1"/>
 		<site type="sphere" size="0.02"/>
@@ -10,7 +11,9 @@
 	<worldbody>
 	
 		<light directional="true" cutoff="4" exponent="20" diffuse="1 1 1" specular="0 0 0" pos=".9 .3 2.5" dir="-.9 -.3 -2.5"/>
-	
+		<camera name="cam1" pos="-5.161 -5.989 6.752" xyaxes="0.758 -0.653 -0.000 0.424 0.492 0.760"/>
+
+
 		<!-- ======= Ground ======= -->
 		<geom name="ground" type="plane" pos="0 0 0" size="0.5 1 2" rgba=" .25 .26 .25 1" contype="0" conaffinity="0"/>
 		<site name="rFix" pos="0 -.2 .005"/>

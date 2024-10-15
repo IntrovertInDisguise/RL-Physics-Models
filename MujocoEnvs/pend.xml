@@ -10,7 +10,8 @@
 	<worldbody>
 	
 		<light directional="true" cutoff="4" exponent="20" diffuse="1 1 1" specular="0 0 0" pos=".9 .3 2.5" dir="-.9 -.3 -2.5 "/>
-	
+		<camera name="cam1" pos="-2.510 -2.202 2.585" xyaxes="0.659 -0.752 -0.000 0.460 0.404 0.791"/>
+
 		<!-- ======= Ground ======= -->
 		<geom name="ground" type="plane" pos="0 0 0" size="0.5 1 2" rgba=" .25 .26 .25 1"/>
 		<site name="rFix" pos="0 -.2 .005"/>
@@ -19,13 +20,13 @@
 		<!-- ======= Beam ======= -->
 		<body name="beam" pos="0 0 .5">
 			<!--density of the rod is ten times smaller than other objects (e.g. the ball) for a better point mass approximation-->
-            <geom name="rod" type="cylinder" pos="0 0 0.0" size=".01 .1" density="100"/>
+            <geom name="rod" type="cylinder" pos="0 0 0.0" size=".005 .1" density="100"/>
 			<geom pos="0 0 -.1" type="capsule" size=".01 .2" euler="1.57 0 0"/>
-			<joint name="pivot" pos="0 0 -0.1" axis="0 1 0" limited="false" damping=".05"/>
+			<joint name="pivot" pos="0 0 -0.1" axis="0 1 0" limited="false"/>
 			<site name="rBeam" pos="0 -.2 -.1"/>
 			<site name="lBeam" pos="0 .2 -.1"/>
 			<body name="ballbody" pos="0 0 0.1">
-				<geom name="ballgeom" type="sphere" size=".05"/>
+				<geom name="ballgeom" type="sphere" size=".02"/>
 			</body>
 		</body>
 	</worldbody>
