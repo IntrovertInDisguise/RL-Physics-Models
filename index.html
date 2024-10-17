@@ -83,7 +83,7 @@ $$ Q(s, a) \leftarrow Q(s, a) + \alpha \left[ r + \gamma \max_{a'} Q(s', a') - Q
             <td>Discrete Force (+10N, 0N, -10N)</td>
             <td>Position x</td>
             <td>Maximize spring compression</td>
-            <td> -|x|</td>
+            <td> $-|x|$</td>
             <td>10s</td>
             <td>10000</td>
             <td><a href="https://introvertindisguise.github.io/RL-Physics-Models/Code/QLearning/Outputs/Springmass/EvolutionOverTime.png?raw=true"><img src="https://introvertindisguise.github.io/RL-Physics-Models/Code/QLearning/Outputs/Springmass/EvolutionOverTime.png?raw=true" alt="Time evolution plot" width="150"></a></td>
@@ -96,7 +96,45 @@ $$ Q(s, a) \leftarrow Q(s, a) + \alpha \left[ r + \gamma \max_{a'} Q(s', a') - Q
               </td>              
             <td><a href="https://github.com/IntrovertInDisguise/RL-Physics-Models/blob/main/Code/QLearning/Qlearning.ipynb">Code</a></td>
         </tr>
-        
+        <tr>
+            <td>Spring-Mass</td>
+            <td>Q-learning</td>
+            <td>Discrete Force (+10N, 0N, -10N)</td>
+            <td>Position x</td>
+            <td>Maximize spring compression</td>
+            <td> $-|1/(1+x)|$</td>
+            <td>10s</td>
+            <td>10000</td>
+            <td><a href="https://introvertindisguise.github.io/RL-Physics-Models/Code/QLearning/Outputs/Springmass/EvolutionOverTimev2.png?raw=true"><img src="https://introvertindisguise.github.io/RL-Physics-Models/Code/QLearning/Outputs/Springmass/EvolutionOverTimev2.png?raw=true" alt="Time evolution plot" width="150"></a></td>
+            <td><a href="https://introvertindisguise.github.io/RL-Physics-Models/Code/QLearning/Outputs/Springmass/EpisodeWiseEvolutionv2.png"><img src="https://introvertindisguise.github.io/RL-Physics-Models/Code/QLearning/Outputs/Springmass/EpisodeWiseEvolutionv2.png?raw=true" alt="Epoch plot" width="150"></a></td>
+            <td>
+                <video controls>
+                  <source src="https://introvertindisguise.github.io/RL-Physics-Models/Code/QLearning/Outputs/Springmass/springmassv2.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </td>              
+            <td><a href="https://github.com/IntrovertInDisguise/RL-Physics-Models/blob/main/Code/QLearning/Qlearning.ipynb">Code</a></td>
+        </tr>
+
+        <tr>
+            <td>Spring-Mass</td>
+            <td>Q-learning</td>
+            <td>Discrete Force (+10N, 0N, -10N)</td>
+            <td>Position x</td>
+            <td>Maximize spring compression</td>
+            <td> $|1/(1+x)|$</td>
+            <td>10s</td>
+            <td>10000</td>
+            <td><a href="https://introvertindisguise.github.io/RL-Physics-Models/Code/QLearning/Outputs/Springmass/EvolutionOverTimev3.png?raw=true"><img src="https://introvertindisguise.github.io/RL-Physics-Models/Code/QLearning/Outputs/Springmass/EvolutionOverTimev3.png?raw=true" alt="Time evolution plot" width="150"></a></td>
+            <td><a href="https://introvertindisguise.github.io/RL-Physics-Models/Code/QLearning/Outputs/Springmass/EpisodeWiseEvolutionv3.png?raw=true"><img src="https://introvertindisguise.github.io/RL-Physics-Models/Code/QLearning/Outputs/Springmass/EpisodeWiseEvolutionv3.png?raw=true" alt="Epoch plot" width="150"></a></td>
+            <td>
+                <video controls>
+                  <source src="https://introvertindisguise.github.io/RL-Physics-Models/Code/QLearning/Outputs/Springmass/springmass.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </td>              
+            <td><a href="https://github.com/IntrovertInDisguise/RL-Physics-Models/blob/main/Code/QLearning/Qlearning.ipynb">Code</a></td>
+        </tr>
         
         <!-- More rows as needed -->
     </tbody>
