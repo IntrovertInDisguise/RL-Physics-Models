@@ -23,12 +23,12 @@
         </body>
 
         <!-- Placeholder cuboidal mass body, representing the spring anchor -->
-        <body name="small_mass" pos="0.2 0 0.01"> <!-- Adjusted position -->
+        <body name="small_mass" pos="0.1 0 0.01"> <!-- Adjusted position -->
             <!-- Cuboidal mass geometry (slender shape) -->
-            <geom name="mass_geom" type="box" size="0.02 0.1 0.1" mass="0.1" rgba="0.5 0.5 0.5 1"/>
+            <geom name="mass_geom" type="box" size="0.02 0.1 0.1" mass="0.01" rgba="0.5 0.5 0.5 1"/>
 
             <!-- Joint for the mass to allow movement along the x-axis -->
-            <joint name="mass_joint" type="slide" axis="1 0 0" range="-1 1" stiffness="2" />
+            <joint name="mass_joint" type="slide" axis="1 0 0" range="-1 1" springdamper="2 0.0001" springref="0.1"/>
         </body>
     </worldbody>
 
