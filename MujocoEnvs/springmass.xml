@@ -7,14 +7,19 @@
         <joint damping="0.5" limited="true"/>
         <geom density="1000" friction="0.5 0.1 0.1"/>
     </default>
-
+    <asset>
+        <!-- Checker texture for grid pattern -->
+        <texture name="grid" type="2d" builtin="checker" width="512" height="512" rgb1="0.9 0.9 0.9" rgb2="0.8 0.8 0.8" />
+        <!-- Material for ground using the grid texture -->
+        <material name="grid_material" texture="grid" texrepeat="5 5" reflectance="0.2"/>
+    </asset>
     <!-- World body -->
     <worldbody>
         <light directional="true" cutoff="4" exponent="20" diffuse="1 1 1" specular="0 0 0" pos=".9 .3 2.5" dir="-.9 -.3 -2.5 "/>
         <camera name="cam1" pos="0.000 -1.414 1.414" xyaxes="1.000 -0.000 0.000 0.000 0.707 0.707"/>
 
         <!-- Ground plane -->
-        <geom name="ground" type="plane" size="0 0 0.1" rgba="0.8 0.8 0.8 1"/>
+        <geom name="ground" type="plane" size="0 0 0.1" rgba="0.8 0.8 0.8 1" material="grid_material"/>
 
         <!-- A fixed body to attach the spring to -->
         <body name="base" pos="0 0 0">
@@ -25,7 +30,7 @@
         <!-- Placeholder cuboidal mass body, representing the spring anchor -->
         <body name="small_mass" pos="0.1 0 0.01"> <!-- Adjusted position -->
             <!-- Cuboidal mass geometry (slender shape) -->
-            <geom name="mass_geom" type="box" size="0.02 0.1 0.1" mass="0.01" rgba="0.5 0.5 0.5 1"/>
+            <geom name="mass_geom" type="box" size="0.02 0.1 0.1" mass="0.001" rgba="0.5 0.5 0.5 1"/>
 
             <!-- Joint for the mass to allow movement along the x-axis -->
             <joint name="mass_joint" type="slide" axis="1 0 0" range="-1 1" springdamper="2 0.0001" springref="0.1"/>
