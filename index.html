@@ -37,8 +37,9 @@
 <body>
 
 <h1>Reinforcement Learning for Physics Models</h1>
-
-<h2>Q-learning Algorithm</h2>
+<p>Vignesh Ramakrishnan</p>
+<body>This repository contains implementations of reinforcement learning algorithms for physics models. The goal is to optimize a given physics-model based task by interacting with the environment.</body>
+<h3>Q-learning Algorithm</h3>
 <p>The Q-learning algorithm is based on the following update rule:</p>
 
 <!-- LaTeX Q-learning Formula -->
@@ -76,24 +77,127 @@ $$ Q(s, a) \leftarrow Q(s, a) + \alpha \left[ r + \gamma \max_{a'} Q(s', a') - Q
     
     <tbody>
         <!-- Example row: Spring-Mass system from your repository -->
-        <tr>
-            <td>Spring-Mass</td>
+        <tr style="background-color: #e77780;">
+            <td>Spring-Mass(k=2N/m,m=0.001 kg)</td>
             <td>Q-learning</td>
-            <td>Discrete Force (+10, 0, -10)</td>
-            <td>Position, Velocity (2D)</td>
+            <td>Discrete Force (+10N, 0N, -10N)</td>
+            <td>Spring Extension (x-l)</td>
             <td>Maximize spring compression</td>
-            <td> -|x|</td>
+            <td><p> $-|x-l|$</p></td>
             <td>10s</td>
             <td>10000</td>
-            <td><img src="https://github.com/IntrovertInDisguise/RL-Physics-Models/blob/main/Code/QLearning/Outputs/Springmass/EvolutionOverTime.png?raw=true" alt="Time evolution plot" width="150"></td>
-            <td><img src="https://github.com/IntrovertInDisguise/RL-Physics-Models/blob/main/Code/QLearning/Outputs/Springmass/EpisodeWiseEvolution.png?raw=true" alt="Epoch plot" width="150"></td>
-            <td><video controls>
-                <source src="https://github.com/IntrovertInDisguise/RL-Physics-Models/raw/refs/heads/main/Code/QLearning/Outputs/Springmass/springmass.mp4" type="video/mp4">
-            </video></td>
+            <td><a href="https://introvertindisguise.github.io/RL-Physics-Models/Code/QLearning/Outputs/Springmass/EvolutionOverTime.png?raw=true"><img src="https://introvertindisguise.github.io/RL-Physics-Models/Code/QLearning/Outputs/Springmass/EvolutionOverTime.png?raw=true" alt="Time evolution plot" width="150"></a></td>
+            <td><a href="https://introvertindisguise.github.io/RL-Physics-Models/Code/QLearning/Outputs/Springmass/EpisodeWiseEvolution.png?raw=true"><img src="https://introvertindisguise.github.io/RL-Physics-Models/Code/QLearning/Outputs/Springmass/EpisodeWiseEvolution.png?raw=true" alt="Epoch plot" width="150"></a></td>
+            <td>
+                <video controls>
+                  <source src="https://introvertindisguise.github.io/RL-Physics-Models/Code/QLearning/Outputs/Springmass/springmass.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </td>              
+            <td><a href="https://github.com/IntrovertInDisguise/RL-Physics-Models/blob/main/Code/QLearning/Qlearning.ipynb">Code</a></td>
+        </tr>
+
+        <tr style="background-color: #e77780;">
+            <td>Spring-Mass(k=2N/m,m=0.001 kg)</td>
+            <td>Q-learning</td>
+            <td>Discrete Force (+10N, 0N, -10N)</td>
+            <td>Spring Extension (x-l)</td>
+            <td>Maximize spring compression</td>
+            <td><p> $-|x|$</p></td>
+            <td>10s</td>
+            <td>10000</td>
+            <td><a href="https://introvertindisguise.github.io/RL-Physics-Models/Code/QLearning/Outputs/Springmass/EvolutionOverTimev2.png?raw=true"><img src="https://introvertindisguise.github.io/RL-Physics-Models/Code/QLearning/Outputs/Springmass/EvolutionOverTimev2.png?raw=true" alt="Time evolution plot" width="150"></a></td>
+            <td><a href="https://introvertindisguise.github.io/RL-Physics-Models/Code/QLearning/Outputs/Springmass/EpisodeWiseEvolutionv2.png?raw=true"><img src="https://introvertindisguise.github.io/RL-Physics-Models/Code/QLearning/Outputs/Springmass/EpisodeWiseEvolutionv2.png?raw=true" alt="Epoch plot" width="150"></a></td>
+            <td>
+                <video controls>
+                  <source src="https://introvertindisguise.github.io/RL-Physics-Models/Code/QLearning/Outputs/Springmass/springmassv2.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </td>              
+            <td><a href="https://github.com/IntrovertInDisguise/RL-Physics-Models/blob/main/Code/QLearning/Qlearning.ipynb">Code</a></td>
+        </tr>
+
+
+        <tr style="background-color: #e77780;">
+            <td>Spring-Mass(k=2N/m,m=0.001 kg)</td>
+            <td>Q-learning</td>
+            <td>Discrete Force (+10N, 0N, -10N)</td>
+            <td>Spring Extension (x-l)</td>
+            <td>Maximize spring compression</td>
+            <td> <p>$-|1/(1+x)|$</p></td>
+            <td>10s</td>
+            <td>10000</td>
+            <td><a href="https://introvertindisguise.github.io/RL-Physics-Models/Code/QLearning/Outputs/Springmass/EvolutionOverTimev3.png?raw=true"><img src="https://introvertindisguise.github.io/RL-Physics-Models/Code/QLearning/Outputs/Springmass/EvolutionOverTimev3.png?raw=true" alt="Time evolution plot" width="150"></a></td>
+            <td><a href="https://introvertindisguise.github.io/RL-Physics-Models/Code/QLearning/Outputs/Springmass/EpisodeWiseEvolutionv3.png"><img src="https://introvertindisguise.github.io/RL-Physics-Models/Code/QLearning/Outputs/Springmass/EpisodeWiseEvolutionv3.png?raw=true" alt="Epoch plot" width="150"></a></td>
+            <td>
+                <video controls>
+                  <source src="https://introvertindisguise.github.io/RL-Physics-Models/Code/QLearning/Outputs/Springmass/springmassv3.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </td>              
+            <td><a href="https://github.com/IntrovertInDisguise/RL-Physics-Models/blob/main/Code/QLearning/Qlearning.ipynb">Code</a></td>
+        </tr>
+
+        <tr style="background-color: #e77780;">
+            <td>Spring-Mass(k=2N/m,m=0.001 kg)</td>
+            <td>Q-learning</td>
+            <td>Discrete Force (+10N, 0N, -10N)</td>
+            <td>Spring Extension (x-l)</td>
+            <td>Maximize spring compression</td>
+            <td><p>$|1/(1+x)|$</p> </td>
+            <td>10s</td>
+            <td>10000</td>
+            <td><a href="https://introvertindisguise.github.io/RL-Physics-Models/Code/QLearning/Outputs/Springmass/EvolutionOverTimev4.png?raw=true"><img src="https://introvertindisguise.github.io/RL-Physics-Models/Code/QLearning/Outputs/Springmass/EvolutionOverTimev4.png?raw=true" alt="Time evolution plot" width="150"></a></td>
+            <td><a href="https://introvertindisguise.github.io/RL-Physics-Models/Code/QLearning/Outputs/Springmass/EpisodeWiseEvolutionv4.png?raw=true"><img src="https://introvertindisguise.github.io/RL-Physics-Models/Code/QLearning/Outputs/Springmass/EpisodeWiseEvolutionv4.png?raw=true" alt="Epoch plot" width="150"></a></td>
+            <td>
+                <video controls>
+                  <source src="https://introvertindisguise.github.io/RL-Physics-Models/Code/QLearning/Outputs/Springmass/springmassv4.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </td>              
             <td><a href="https://github.com/IntrovertInDisguise/RL-Physics-Models/blob/main/Code/QLearning/Qlearning.ipynb">Code</a></td>
         </tr>
         
         
+        <tr style="background-color: #3fb358;">
+            <td>Spring-Mass(k=2N/m,m=0.001 kg)</td>
+            <td>Q-learning</td>
+            <td>Discrete Force (+10N, 0N, -10N)</td>
+            <td>Spring Extension(x-l)</td>
+            <td>Maximize spring compression</td>
+            <td><p>$-(x-l)$</p></td>
+            <td>2s</td>
+            <td>10000</td>
+            <td><a href="https://introvertindisguise.github.io/RL-Physics-Models/Code/QLearning/Outputs/Springmass/EvolutionOverTimev5.png?raw=true"><img src="https://introvertindisguise.github.io/RL-Physics-Models/Code/QLearning/Outputs/Springmass/EvolutionOverTimev5.png?raw=true" alt="Time evolution plot" width="150"></a></td>
+            <td><a href="https://introvertindisguise.github.io/RL-Physics-Models/Code/QLearning/Outputs/Springmass/EpisodeWiseEvolutionv5.png?raw=true"><img src="https://introvertindisguise.github.io/RL-Physics-Models/Code/QLearning/Outputs/Springmass/EpisodeWiseEvolutionv5.png?raw=true" alt="Epoch plot" width="150"></a></td>
+            <td>
+                <video controls>
+                  <source src="https://introvertindisguise.github.io/RL-Physics-Models/Code/QLearning/Outputs/Springmass/springmassv5.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </td>              
+            <td><a href="https://github.com/IntrovertInDisguise/RL-Physics-Models/blob/main/Code/QLearning/Qlearning.ipynb">Code</a></td>
+        </tr>
+
+        <tr style="background-color: #3fb358;">
+            <td>Spring-Mass(k=2N/m,m=0.001 kg)</td>
+            <td>Q-learning</td>
+            <td>Discrete Force (+10N, 0N, -10N)</td>
+            <td>Spring Extension(x-l)</td>
+            <td>Maximize spring compression</td>
+            <td><p>$-(x)$</p></td>
+            <td>2s</td>
+            <td>10000</td>
+            <td><a href="https://introvertindisguise.github.io/RL-Physics-Models/Code/QLearning/Outputs/Springmass/EvolutionOverTimev6.png?raw=true"><img src="https://introvertindisguise.github.io/RL-Physics-Models/Code/QLearning/Outputs/Springmass/EvolutionOverTimev6.png?raw=true" alt="Time evolution plot" width="150"></a></td>
+            <td><a href="https://introvertindisguise.github.io/RL-Physics-Models/Code/QLearning/Outputs/Springmass/EpisodeWiseEvolutionv6.png?raw=true"><img src="https://introvertindisguise.github.io/RL-Physics-Models/Code/QLearning/Outputs/Springmass/EpisodeWiseEvolutionv6.png?raw=true" alt="Epoch plot" width="150"></a></td>
+            <td>
+                <video controls>
+                  <source src="https://introvertindisguise.github.io/RL-Physics-Models/Code/QLearning/Outputs/Springmass/springmassv6.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </td>              
+            <td><a href="https://github.com/IntrovertInDisguise/RL-Physics-Models/blob/main/Code/QLearning/Qlearning.ipynb">Code</a></td>
+        </tr>
         <!-- More rows as needed -->
     </tbody>
 </table>
